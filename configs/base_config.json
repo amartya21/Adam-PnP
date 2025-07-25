@@ -1,0 +1,61 @@
+{
+  "device": "cuda",
+  "seed": 42,
+  "epochs": 1000,
+  "population_size": 8,
+  "log_every": 10,
+  "gradient_clip": 10.0,
+  "temperature": 10.0,
+  "enable_noise_estimation": true,
+  "auto_scale_modalities": true,
+  "t_sigma_update": 0.8,
+  "sigma_update_every": 5,
+  "sigma_ema_decay": 0.5,
+  "bias_correction_factor": 0.3,
+  "use_diffusion": true,
+  "t_start": 1.0,
+  "t_end": 0.001,
+  "temporal_schedule": "sqrt",
+  "lr_adam_pnp": 0.01,
+  "rho_adam_pnp": 0.9,
+  "min_sigma": 0.01,
+  "max_sigma": 5.0,
+  "measurements": {
+    "partial_structure": {
+      "enabled": true,
+      "n_observations": 126,
+      "noise_level": 0.5,
+      "true_noise_level": 0.7,
+      "use_preconditioning": true,
+      "lipschitz_constant": 1.0,
+      "auto_lipschitz": true,
+      "learn_noise": true,
+      "min_sigma": 0.05,
+      "max_sigma": 2.0
+    },
+    "distances": {
+      "enabled": true,
+      "n_distances": 8000,
+      "noise_level": 1.0,
+      "true_noise_level": 0.7,
+      "lipschitz_constant": 2.0,
+      "auto_lipschitz": true,
+      "learn_noise": true,
+      "min_sigma": 0.05,
+      "max_sigma": 3.0
+    },
+    "density": {
+      "enabled": true,
+      "mrc_path": "data/mrcs/7r5b_2.0A.mrc",
+      "resolution": 2.0,
+      "n_fourier_samples": 8000,
+      "noise_level": 2.0,
+      "true_noise_level": 2.0,
+      "lipschitz_constant": 5.0,
+      "auto_lipschitz": true,
+      "learn_noise": false,
+      "min_sigma": 0.5,
+      "max_sigma": 5.0
+    }
+  }
+}
